@@ -6,8 +6,13 @@
 package tpi.gui;
 
 /**
- *
- * @author Horne_Williams_PC1
+ *  This class creates a GUI that allows the user to input parameters 
+ *  and start a test.  A tabbed pane is used for the different steps of
+ *  data entry.
+ * 
+ * 4/9/16
+ * @author Mickey Horne
+ * IST440W
  */
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -101,20 +106,31 @@ class TabbedPaneExample
 
 	}
         
+        //  Creates the Home Page
         public void createPage()
 	{
                 title = "TPI Voltage Monitor";
                 panel = new JPanel();
                 panel.setLayout(null);
                 panel.setBackground(Color.WHITE);
-                               
+                
+                JLabel versionLabel = new JLabel("Version 1.4");
+                JLabel dateLabel = new JLabel("Updated 4/9/16");
+                
+                panel.add(versionLabel);
+                panel.add(dateLabel);
+                
+                versionLabel.setBounds(50, 0, 100, 25);
+                dateLabel.setBounds(650, 0, 100, 25);
+                
+                
                 ImageIcon icon = new ImageIcon(this.getClass().getResource("TPI_logo_edited-1.jpg"));
                 
                 JLabel iconLabel = new JLabel();
                 iconLabel.setIcon(icon);
                 
                 panel.add(iconLabel);
-                iconLabel.setBounds(25, 0, 800, 150);
+                iconLabel.setBounds(25, 30, 800, 150);
                 
                 JLabel infoLabel = new JLabel( "General Test Information:" );
 		//TextArea infoText = new TextArea();
@@ -134,6 +150,7 @@ class TabbedPaneExample
                 
 	}
         
+        //  Creates the System Set-up Page
         public void createPage1()
 	{
                 
@@ -320,29 +337,7 @@ class TabbedPaneExample
                 panel1.add(hiThresholdField);
                 
                 hiThresholdField.setBounds(325, 345, 150, 30);
-                
-                
-               /* JLabel storLabel = new JLabel ("Storage Rate:");
-                
-                panel1.add(storLabel);
-                storLabel.setBounds( 250, 345, 150, 30 );
-                
-                JTextField stMinField = new JTextField();
-                JLabel stMinLabel = new JLabel("min");
-                JTextField stSecField = new JTextField();
-                JLabel stSecLabel = new JLabel("sec");
-                
-                panel1.add(stMinField);
-                panel1.add(stMinLabel);
-                panel1.add(stSecField);
-                panel1.add(stSecLabel);
-                
-                stSecLabel.setBounds( 530, 345, 30, 30 );
-                stSecField.setBounds( 495, 345, 30, 30 );
-                stMinLabel.setBounds( 460, 345, 30, 30 );
-                stMinField.setBounds( 425, 345, 30, 30 );*/
 
-               
                 JButton sysNext = new SysNextButton();
                 JButton sysBack = new SysBackButton();
                 
@@ -355,7 +350,7 @@ class TabbedPaneExample
         
 	}
 
-
+        //  Creates the Check Settings page
 	public void createPage2()
 	{
 		//panelIndex = 2;
@@ -482,7 +477,8 @@ class TabbedPaneExample
                 chkBack.setBounds(600, 375, 75, 40);
 		
 	}
-
+        
+        //  Creates the Confirm page
 	public void createPage3()
 	{
 		//panelIndex = 3;
@@ -639,7 +635,7 @@ class TabbedPaneExample
                 conBack.setBounds(600, 375, 75, 40);
 	}
         
-        
+        //  numCell sets the String value for the number of cells from the radio group
         public  String numCell(){
         
                 String numberOfCells = "";
@@ -665,7 +661,8 @@ class TabbedPaneExample
                 }
                 return numberOfCells;
             } 
-        
+       
+        //     Sets the String value of the cell reference from the radio group
         public String cellRef(){
         
                 String cellReference = "";
@@ -684,7 +681,7 @@ class TabbedPaneExample
         
         }
         
-        
+        //     Sets the String value of the Overall Box from the radio group
         public String overallBox(){
         
                 String overAll = "";
@@ -701,6 +698,38 @@ class TabbedPaneExample
                 
                 return overAll;
         
+        }
+        
+        //  isInt checks that the supplied text value is an integer
+        public boolean isInt(String intComp){
+          
+          boolean valid; 
+          try {
+              Integer.parseInt(intComp);
+              valid = true;
+          }
+          
+          catch (NumberFormatException e){
+              valid = false;
+          }
+          
+          return valid;
+        }
+        
+        //  isDouble checks that the supplied text value is an Double
+        public boolean isDouble(String intComp){
+          
+          boolean valid; 
+          try {
+              Double.parseDouble(intComp);
+              valid = true;
+          }
+          
+          catch (NumberFormatException e){
+              valid = false;
+          }
+          
+          return valid;
         }
         
         private class HomeNextButton extends JButton implements ActionListener{
@@ -756,6 +785,58 @@ class TabbedPaneExample
                 JOptionPane.showMessageDialog( tabbedPane,
                         "Please fill in all parameters");
                 //setTitle("Sytem Setup");
+                }
+                
+                
+                else if (otherNum.isSelected() && (isInt(cellField.getText()) == false)){
+                  
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid cell number");
+                }
+                
+                else if ((isInt(minTotalField.getText()) == false) && 
+                         (isDouble(minTotalField.getText())  == false)){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Abort Voltage Value");
+                }
+                
+                else if ((isInt(minCellField.getText()) == false) && 
+                         (isDouble(minCellField.getText())  == false)){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Cell Alarm Value");
+                }
+                
+                else if ((isInt(hourField.getText()) == false) || 
+                         (isInt(minField.getText())  == false)){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Target Time Value");
+                }
+                
+                else if ((isInt(prMinField.getText()) == false) || 
+                         (isInt(prSecField.getText())  == false)){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Print Rate Value");
+                }
+               
+                else if (((isInt(lowThresholdField.getText()) == false) && 
+                         (isDouble(lowThresholdField.getText())  == false)) ||
+                          ((isInt(hiThresholdField.getText()) == false) && 
+                         (isDouble(hiThresholdField.getText())  == false))){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Threshold Value");
+                }
+                
+                else if (Double.parseDouble(lowThresholdField.getText()) >= 
+                        Double.parseDouble(hiThresholdField.getText())){
+                
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please make sure Low Threshold is less the High Threshold");
+                    
                 }
                 
                 else{
@@ -856,11 +937,28 @@ class TabbedPaneExample
             
             public void actionPerformed(ActionEvent e){
                 
+                if (((isInt(loThreshField.getText()) == false) && 
+                         (isDouble(loThreshField.getText())  == false)) ||
+                          ((isInt(hiThreshField.getText()) == false) && 
+                         (isDouble(hiThreshField.getText())  == false))){
+                    
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please enter a valid Threshold Value");
+                }
+                
+                else if (Double.parseDouble(loThreshField.getText()) >= 
+                        Double.parseDouble(hiThreshField.getText())){
+                
+                    JOptionPane.showMessageDialog( tabbedPane,
+                        "Please make sure Low Threshold is less the High Threshold");
+                    
+                }
+                else {
                 lowThresholdField.setText(loThreshField.getText());
                 hiThresholdField.setText(hiThreshField.getText());
                 JOptionPane.showMessageDialog( tabbedPane,
                         "Threshold Values are updated");
-                
+                }
             }
         }
         
@@ -893,8 +991,12 @@ class TabbedPaneExample
             
             public void actionPerformed(ActionEvent e){
                 
-                JOptionPane.showMessageDialog( tabbedPane,
-                        "Monitor goes here");
+                Monitor monitor = new Monitor();
+         
+		monitor.setVisible( true );
+                
+                /*JOptionPane.showMessageDialog( tabbedPane,
+                        "Monitor goes here");*/
                 //setSize(800, 480);
             }
         }
