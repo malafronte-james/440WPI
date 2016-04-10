@@ -22,6 +22,10 @@ public class FileData {
         
         myfile1.createNewFile();
         
+        /*
+         * Just tests that the file was created
+         */
+         
         if (myfile.createNewFile()){
             System.out.println("Empty File Successfully Created");
         }
@@ -32,6 +36,10 @@ public class FileData {
         String file_path = "C:/Users/John/Documents/";
         String file_name = "test.txt";
         
+        /*
+         * Random string created to test
+         */
+         
         String myList[] = {"house", "cars", "boat"};
         
         /*
