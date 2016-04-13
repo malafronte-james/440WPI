@@ -314,7 +314,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Cell_Voltage">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Cell Voltages"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">

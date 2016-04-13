@@ -113,7 +113,7 @@ public class Monitor extends javax.swing.JFrame {
             }
         });
 
-        Cell_Voltage.setText("jLabel1");
+        Cell_Voltage.setText("Cell Voltages");
 
         jButton1.setText("Abort");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +252,7 @@ public class Monitor extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showConfirmDialog(null,
-        "choose one", "choose one", JOptionPane.YES_NO_OPTION);
+        "Do you really want to Abort the Test?", "Abort", JOptionPane.YES_NO_OPTION);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
