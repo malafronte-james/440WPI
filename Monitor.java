@@ -56,7 +56,7 @@ public class Monitor extends javax.swing.JFrame {
         T_Com = new javax.swing.JTextField();
         Pause_Button = new javax.swing.JButton();
         Cell_Voltage = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Abort = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,10 +115,10 @@ public class Monitor extends javax.swing.JFrame {
 
         Cell_Voltage.setText("Cell Voltages");
 
-        jButton1.setText("Abort");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Abort.setText("Abort");
+        Abort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AbortActionPerformed(evt);
             }
         });
 
@@ -180,7 +180,7 @@ public class Monitor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Pause_Button)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(Abort)
                         .addGap(44, 44, 44))))
         );
         layout.setVerticalGroup(
@@ -237,7 +237,7 @@ public class Monitor extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Pause_Button)
-                            .addComponent(jButton1))))
+                            .addComponent(Abort))))
                 .addGap(70, 70, 70))
         );
 
@@ -249,11 +249,11 @@ public class Monitor extends javax.swing.JFrame {
         getContentPane().setBackground(Color.RED);
     }//GEN-LAST:event_Pause_ButtonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AbortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbortActionPerformed
         // TODO add your handling code here:
         JOptionPane.showConfirmDialog(null,
         "Do you really want to Abort the Test?", "Abort", JOptionPane.YES_NO_OPTION);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AbortActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +293,7 @@ public class Monitor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AV_Cell;
     private javax.swing.JTextField AV_p;
+    private javax.swing.JButton Abort;
     private javax.swing.JTextArea Ac_Log;
     private javax.swing.JLabel Activity_Log;
     private javax.swing.JTextField B_Amp;
@@ -312,7 +313,6 @@ public class Monitor extends javax.swing.JFrame {
     private javax.swing.JLabel Power_kW;
     private javax.swing.JTextField T_Com;
     private javax.swing.JLabel Test_Completed;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField kW_H;
