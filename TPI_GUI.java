@@ -1011,12 +1011,12 @@ class TPIGUI
             
             public void actionPerformed(ActionEvent e){
                 
-                Monitor monitor = new Monitor();
+                GUI_Monitor monitor = new GUI_Monitor();
          
 		monitor.setVisible( true );
                 
                 /*JOptionPane.showMessageDialog( tabbedPane,
-                        "Monitor goes here");*/
+                        "GUI_Monitor goes here");*/
                 //setSize(800, 480);
             }
         }
