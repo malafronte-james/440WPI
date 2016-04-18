@@ -19,11 +19,11 @@ public class DataStorage {
         /*
          * Creates 2 locations for data storage. Names can be anything
          */        
-        File myfile = new File("C:/Users/John/Documents/test.txt");
-        File myfile1 = new File("C:/Users/John/Documents/test1.txt");
+        File dataToFlashDrive = new File("C:/Users/John/Documents/test.txt");
+        File dataToCard = new File("C:/Users/John/Documents/test1.txt");
         
-        myfile.createNewFile();
-        myfile1.createNewFile();
+        dataToFlashDrive.createNewFile();
+        dataToCard.createNewFile();
         
         String file_path = "C:/Users/John/Documents/";
         String file_name = "test.txt";
@@ -50,16 +50,18 @@ public class DataStorage {
         catch (IOException e) {
             System.out.println( e.getMessage());
         }
-        
         /*
          * WriteFile writes information to .txt file(s) created
          */        
         WriteFile data = new WriteFile(file_path + file_name, true);
         WriteFile data1 = new WriteFile(file_path + "test1.txt", true);
+        data.writeToFile("Column1\tColumn2\tColumn3\r\n");
+        data1.writeToFile("Column1\tColumn2\tColumn3\r\n");
+        
         for (int i = 0; i < myList.length; i++) {
             if (i > 0){
-                data.writeToFile(", ");
-                data1.writeToFile(", ");
+                data.writeToFile("\t");
+                data1.writeToFile("\t");
             }
             data.writeToFile(myList[i]);
             data1.writeToFile(myList[i]);
