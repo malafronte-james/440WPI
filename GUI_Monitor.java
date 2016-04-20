@@ -10,8 +10,9 @@ package gui;
  * @author Horne_Williams_PC1
  */
 import java.awt.Color; 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.awt.Dimension;
+import javax.swing.*;
+
 
 public class GUI_Monitor extends javax.swing.JFrame {
 
@@ -30,7 +31,8 @@ public class GUI_Monitor extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        
+        
         jScrollPane1 = new javax.swing.JScrollPane();
         C_V = new javax.swing.JTextArea();
         Battery_Voltage = new javax.swing.JLabel();
@@ -126,6 +128,11 @@ public class GUI_Monitor extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         getContentPane().setBackground(Color.WHITE);
+        
+        getContentPane().setPreferredSize( new Dimension(800,480) );
+        getContentPane().setMaximumSize( new Dimension(800,480) );
+        getContentPane().setMinimumSize( new Dimension(800,480) );
+        
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()

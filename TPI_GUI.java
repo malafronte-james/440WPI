@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+
 class TPIGUI
 		extends 	JFrame
 {
@@ -62,6 +63,8 @@ class TPIGUI
         private         JRadioButton    overallYes;
         private         JRadioButton    overallNo;
         private         JLabel          overallStatus;
+        private         TextArea        voltArea;
+        private         int             cells;
         
 	public TPIGUI()
 	{
@@ -111,8 +114,8 @@ class TPIGUI
                 panel.setLayout(null);
                 panel.setBackground(Color.WHITE);
                 
-                JLabel versionLabel = new JLabel("Version 1.4");
-                JLabel dateLabel = new JLabel("Updated 4/9/16");
+                JLabel versionLabel = new JLabel("Version 1.5");
+                JLabel dateLabel = new JLabel("Updated 4/18/16");
                 
                 panel.add(versionLabel);
                 panel.add(dateLabel);
@@ -451,7 +454,7 @@ class TPIGUI
                 sortLow.setBounds( 430, 230, 50, 30 );
                 sortHigh.setBounds( 500, 230, 50, 30 );
                 
-                TextArea voltArea = new TextArea("", 4, 30, TextArea.SCROLLBARS_VERTICAL_ONLY);
+                voltArea = new TextArea("", 4, 30, TextArea.SCROLLBARS_VERTICAL_ONLY);
                 voltArea.setBackground(Color.WHITE);
                 voltArea.setEditable(false);
 
@@ -738,6 +741,19 @@ class TPIGUI
           return valid;
         }
         
+        public void printVoltage(float[] spiOutputArray){
+            
+            int cell = 1;
+        
+            for (int i= 0; 1 < spiOutputArray.length; i++){
+                
+               voltArea.append("Cell : " + cell + spiOutputArray[i] + "  ");
+               cell++;
+                
+            }
+        
+        }
+        
         private class HomeNextButton extends JButton implements ActionListener{
             
             //int nextIndex;
@@ -864,6 +880,10 @@ class TPIGUI
                 loThreshField.setText(lowThresholdField.getText());
                 hiThreshField.setText(hiThresholdField.getText());
                 numCellField.setText(numCell());
+                cells = Integer.parseInt(numCell());
+                
+                float [] spiArray = SPIreadVoltages.getSpiData(cells);
+                printVoltage(spiArray);
                 
                 }
             }
@@ -1012,7 +1032,10 @@ class TPIGUI
             public void actionPerformed(ActionEvent e){
                 
                 GUI_Monitor monitor = new GUI_Monitor();
-         
+                    //monitor.setPreferredSize( new Dimension(800,480) );
+                //monitor.setMinimumSize(new Dimension(800,480));
+                //monitor.setMaximumSize(new Dimension (800,480));
+                //monitor.pack();
 		monitor.setVisible( true );
                 
                 /*JOptionPane.showMessageDialog( tabbedPane,
