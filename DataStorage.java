@@ -1,73 +1,73 @@
-/*
- * This program creates the file location and writes to file 
- */
-package data;
-import java.io.IOException;
-import java.io.File;
+// Modified by: Stephen Toms
+// Edited by: John Bach
+// Date Last Updated:  4/20/2016
 
-/*
- * @author John
- */
+// Source file: TestWriter.java
+// Purpose: 
 
-public class DataStorage {
+    public class DataStorage
+   {
+   
+      public static void main (String args[])
+      {
+           
+      //basic test varibales for the example loop
+      
+      boolean loop = true; //loop control variable
+      int i = 0; //a variable to control a condition to terminate the loop
+      double[] exArray = new double[] {2.40, 3.05, 5.70, 6.66, 8.30, 2.50, 2.50};
+      String userData = "Test time: 1:45, Date: 4/13/2016, Testing " + exArray.length + " Cells";
 
-    /*
-     * Creates .txt file in two locations
-     */    
-    public static void main(String[] args) throws IOException {
-        
-        /*
-         * Creates 2 locations for data storage. Names can be anything
-         */        
-        File dataToFlashDrive = new File("C:/Users/John/Documents/test.txt");
-        File dataToCard = new File("C:/Users/John/Documents/test1.txt");
-        
-        dataToFlashDrive.createNewFile();
-        dataToCard.createNewFile();
-        
-        String file_path = "C:/Users/John/Documents/";
-        String file_name = "test.txt";
-        
-        /*
-         * Random array to test
-         */
-        String myList[] = {"house", "cars", "boat"};
-        
-        /*
-         * Calls TempData to store data into an array
-         * Needs changed to match once TempData is changed
-         * or cut out entirely if not needed
-         */        
-        try{
-            TempData file = new TempData(file_path + file_name);
-            String[] aryLines = file.OpenFile();
-            
-            int i;
-            for (i=0; i < aryLines.length; i++){
-                System.out.println(aryLines[i]);
-            }
-        }
-        catch (IOException e) {
-            System.out.println( e.getMessage());
-        }
-        /*
-         * WriteFile writes information to .txt file(s) created
-         */        
-        WriteFile data = new WriteFile(file_path + file_name, true);
-        WriteFile data1 = new WriteFile(file_path + "test1.txt", true);
-        data.writeToFile("Column1\tColumn2\tColumn3\r\n");
-        data1.writeToFile("Column1\tColumn2\tColumn3\r\n");
-        
-        for (int i = 0; i < myList.length; i++) {
-            if (i > 0){
-                data.writeToFile("\t");
-                data1.writeToFile("\t");
-            }
-            data.writeToFile(myList[i]);
-            data1.writeToFile(myList[i]);
-        }
-        
-        System.out.println("File has been edited");
-    }
+      
+               
+      //Create the WriteFile Object and Open the Writing Stream
+      WriteFile outFile = new WriteFile();            
     
-}
+      //Pass the user Data to the WriteFile Class
+      outFile.setUserData(userData);
+    
+      //Pass the Cell Data to the WriteFile Class
+      outFile.setCellData(exArray);
+      
+      //Print the header
+      outFile.printHeader();
+    
+    
+      //exmaple of a main loop
+      while(loop){
+      
+      
+         //set the array with new values
+         outFile.setCellData(exArray);
+      
+         //within the main loop we call the printData() method so that it prints out only the array of values we want
+         outFile.printData();
+         
+         
+         
+         //increment the variable handling the loop control method so that this test program terminates
+         i++;
+         
+         //run this loop 10 times
+         if(i > 9){
+            loop = false;
+         }
+         
+      }
+      
+      
+      
+      
+      //Close the file stream
+      //this will be called right when the program is ending/terminated
+      //if this is called no data will be saved to the file
+      outFile.stopWrite();
+               
+               
+               
+               
+               
+               
+      }//end main
+   
+   }//end TestWriter

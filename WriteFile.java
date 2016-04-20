@@ -1,6 +1,6 @@
-// Name(s): Stephen Toms   
-// Date: 11/19/15
-// Lab 8
+// Name(s): Stephen Toms
+// Edited by: John Bach
+// Date: 4/20/16
 
 // imports
 import java.io.File;
@@ -31,9 +31,11 @@ public class WriteFile
 
    // Construct the Scanner and PrintWriter objects for writing
    private static String outputFileName;
+   private static String outputFileName2;
    private static PrintWriter out;
+   private static PrintWriter out2;
 
-   // Example variables to demonstarte that the print method works by grabbing values from an array
+   // Example variables to demonstrate that the print method works by grabbing values from an array
 
    private static double[] results; // array to store the scores
    private static String userData;
@@ -42,11 +44,13 @@ public class WriteFile
    //Default Constructor that sets the output file as "results.txt"
    public WriteFile(){
       outputFileName = "results.txt";
+      outputFileName2 = "results1.txt";
       
       //must put in a try catch incase you user does not have permission to write 
       try
       {
            out = new PrintWriter(outputFileName);
+           out2 = new PrintWriter(outputFileName2);
       }
       catch (Exception e)
       {
@@ -76,18 +80,22 @@ public class WriteFile
   public static void printHeader(){
      //Print out the userData for the test and a charater return to move to next line
      out.println(userData + "\n");
+     out2.println(userData + "\n");
      
      //while loop to print header for each cells we are testing
      int i = 0;
      while(i < results.length){
-         out.print("   " + (i + 1));
+         out.print("Cell " + (i + 1));
+         out2.print("Cell " + (i + 1));
          if(i != results.length-1){
-            out.print(",");
+            out.print("\t");
+            out2.print("\t");
          }
          i++;
      }
      //move cursor to next line
      out.println(" ");
+     out2.println(" ");
   } 
      
      
@@ -98,15 +106,18 @@ public class WriteFile
       while(curCell < results.length){
          
             out.printf("%.2f", results[curCell]);
+            out2.printf("%.2f", results[curCell]);
             
             if(curCell != results.length-1){
-               out.print(",");
+               out.print("\t");
+               out2.print("\t");
             }
             
             curCell++;
             
             if(curCell == results.length){
                out.println("");
+               out2.println("");
             }
             
             
@@ -119,6 +130,7 @@ public class WriteFile
    
    public static void stopWrite(){
       out.close();
+      out2.close();
    }
    
    
