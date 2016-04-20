@@ -31,70 +31,81 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
+                      <Component id="Test_Completed" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="tCompleted" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="Duration" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="dUration" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Battery_Voltage" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Power_kW" min="-2" max="-2" attributes="0"/>
-                                          <Component id="kW_Hours" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Battery_Amperage" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="Power_kW" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="pKW" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="kW_Hours" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="kWHours" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="Battery_Voltage" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="bVol" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="B_Voltage" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="kW_H" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="P_kW" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="AV_Cell" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Low_Cell" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Low_Cell" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="High_Cell" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="AV_Cell" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="aVPCell" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lCell" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="B_Amp" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                              <Component id="High_Cell" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="hCell" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="L_C" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AV_p" min="-2" max="-2" attributes="0"/>
-                                  <Component id="H_C" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="Battery_Amperage" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="bAmp" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Test_Completed" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="T_Com" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane1" alignment="0" min="-2" pref="420" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="Activity_Log" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="Duration" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pause_Button" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="Dur" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Abort" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="490" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Pause_Button" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Abort" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -103,62 +114,47 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Duration" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Dur" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Test_Completed" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="T_Com" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tCompleted" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dUration" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Battery_Voltage" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="B_Voltage" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AV_Cell" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AV_p" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="Activity_Log" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Battery_Voltage" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AV_Cell" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bVol" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="aVPCell" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Component id="Activity_Log" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Power_kW" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="P_kW" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="Low_Cell" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="L_C" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Low_Cell" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Power_kW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pKW" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lCell" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="kW_Hours" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Battery_Amperage" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="B_Amp" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="kW_H" min="-2" max="-2" attributes="0"/>
-                                  <Component id="H_C" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="High_Cell" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="kW_Hours" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="kWHours" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="High_Cell" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="hCell" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Battery_Amperage" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAmp" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="Cell_Voltage" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -196,112 +192,52 @@
     </Container>
     <Component class="javax.swing.JLabel" name="Battery_Voltage">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Battery Voltage"/>
+        <Property name="text" type="java.lang.String" value="Battery Voltage:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Power_kW">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Power (kW)"/>
+        <Property name="text" type="java.lang.String" value="Power (kW):"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="AV_Cell">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Average Volts per Cell"/>
+        <Property name="text" type="java.lang.String" value="Average Volts per Cell:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="High_Cell">
       <Properties>
-        <Property name="text" type="java.lang.String" value="High Cell"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="B_Voltage">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="P_kW">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="kW_H">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="AV_p">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="L_C">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField5"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="H_C">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField6"/>
+        <Property name="text" type="java.lang.String" value="High Cell:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="kW_Hours">
       <Properties>
-        <Property name="text" type="java.lang.String" value="kW Hours"/>
+        <Property name="text" type="java.lang.String" value="kW Hours:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Low_Cell">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Low Cell"/>
+        <Property name="text" type="java.lang.String" value="Low Cell:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Battery_Amperage">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Battery Amperage"/>
+        <Property name="text" type="java.lang.String" value="Battery Amperage:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="B_Amp">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField7"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="Ac_Log">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JLabel" name="Activity_Log">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Activity Log"/>
+        <Property name="text" type="java.lang.String" value="Activity Log:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Duration">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Duration"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="Dur">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField8"/>
+        <Property name="text" type="java.lang.String" value="Duration:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="Test_Completed">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Completed"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="T_Com">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField9"/>
+        <Property name="text" type="java.lang.String" value="Test Completed:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Pause_Button">
@@ -314,7 +250,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Cell_Voltage">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cell Voltages"/>
+        <Property name="text" type="java.lang.String" value="Cell Voltages:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Abort">
@@ -324,6 +260,66 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbortActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bVol">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pKW">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="kWHours">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bAmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="aVPCell">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lCell">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel6"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="hCell">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel7"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="tCompleted">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dUration">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel9"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
