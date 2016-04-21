@@ -7,9 +7,13 @@ package Application;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventObject;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+
+import Data.*;
 import GUI.*;
+import SPI.*;
 import Utilities.*;
 
 
@@ -18,7 +22,8 @@ public class runApp implements ActionListener, ThresholdListener
 	TPIGUI main;
 	GUI_Monitor monitor = new GUI_Monitor();
 	GUIEndScreen endScreen = new GUIEndScreen();
-	//Loop loop;
+	MainLoop loop;
+	TempData data;
 	long lStartTime, lEndTime;
 	
 	public runApp()
@@ -49,8 +54,8 @@ public class runApp implements ActionListener, ThresholdListener
 				   main.setVisible(false);
 				   monitor.setVisible(true);
 				   
-				   //loop = new Loop(monitor);
-				  // loop.startLoop();
+				   loop = new MainLoop(monitor, data);
+				   loop.startLoop();
 				   lStartTime = System.nanoTime();
 				   
 			   }
@@ -62,6 +67,9 @@ public class runApp implements ActionListener, ThresholdListener
 	               
 	               if (confirm == JOptionPane.YES_OPTION)
 	               {
+	            	   
+	            	   loop.stopLoop();
+	            	   
 	                  //create summary gui    
 	            	   main.setVisible(false);
 	            	   monitor.setVisible(false);
@@ -103,9 +111,12 @@ public class runApp implements ActionListener, ThresholdListener
 		   
 		   
 		@Override
-		public void outOfThreshold() {
+		public void outOfThreshold(EventObject event) {
 			
 			//pause loop
+			loop.pauseLoop();
+			System.out.println("Out of threshold");
+			
 			//alert
 		}
 }

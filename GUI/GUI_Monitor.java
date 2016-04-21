@@ -29,7 +29,7 @@ public class GUI_Monitor extends JFrame {
     public JLabel aVPCell;
     public JLabel bAmp;
     public JLabel bVol;
-    public JLabel dUration;
+    public JLabel duration;
     public JLabel hCell;
     public JScrollPane jScrollPane1;
     public JScrollPane jScrollPane3;
@@ -82,7 +82,7 @@ public class GUI_Monitor extends JFrame {
         jScrollPane3 = new JScrollPane();
         jTextArea1 = new JTextArea();
         tCompleted = new JLabel();
-        dUration = new JLabel();
+        duration = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,7 +147,7 @@ public class GUI_Monitor extends JFrame {
 
         tCompleted.setText("jLabel8");
 
-        dUration.setText("jLabel9");
+        duration.setText("jLabel9");
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,7 +172,7 @@ public class GUI_Monitor extends JFrame {
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Duration)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dUration)
+                        .addComponent(duration)
                         .addGap(193, 193, 193))
                     .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -232,7 +232,7 @@ public class GUI_Monitor extends JFrame {
                     .addComponent(Duration)
                     .addComponent(Test_Completed)
                     .addComponent(tCompleted)
-                    .addComponent(dUration))
+                    .addComponent(duration))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(Battery_Voltage)

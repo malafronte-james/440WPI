@@ -822,6 +822,21 @@ public class TPIGUI extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{
 		
+		if(e.getSource() == homeNextButton)
+		{
+			 if (infoText.getText().isEmpty()){
+	                JOptionPane.showMessageDialog( tabbedPane,
+	                        "Please Enter Test Info");
+	                //setTitle("Sytem Setup");
+	                }
+	                
+	                else{
+	                
+	                tabbedPane.setSelectedIndex(1);
+	                tabbedPane.setEnabledAt(1, true);
+	                }
+		} // end homeNextButton
+		
 		if(e.getSource() == sysNextButton)
 		{
             if (minTotalField.getText().isEmpty() || 
