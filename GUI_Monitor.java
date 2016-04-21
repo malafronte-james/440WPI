@@ -22,7 +22,6 @@ public class GUI_Monitor extends javax.swing.JFrame {
     public GUI_Monitor() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,34 +30,33 @@ public class GUI_Monitor extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        
-        
+
         jScrollPane1 = new javax.swing.JScrollPane();
         C_V = new javax.swing.JTextArea();
         Battery_Voltage = new javax.swing.JLabel();
         Power_kW = new javax.swing.JLabel();
         AV_Cell = new javax.swing.JLabel();
         High_Cell = new javax.swing.JLabel();
-        B_Voltage = new javax.swing.JTextField();
-        P_kW = new javax.swing.JTextField();
-        kW_H = new javax.swing.JTextField();
-        AV_p = new javax.swing.JTextField();
-        L_C = new javax.swing.JTextField();
-        H_C = new javax.swing.JTextField();
         kW_Hours = new javax.swing.JLabel();
         Low_Cell = new javax.swing.JLabel();
         Battery_Amperage = new javax.swing.JLabel();
-        B_Amp = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Ac_Log = new javax.swing.JTextArea();
         Activity_Log = new javax.swing.JLabel();
         Duration = new javax.swing.JLabel();
-        Dur = new javax.swing.JTextField();
         Test_Completed = new javax.swing.JLabel();
-        T_Com = new javax.swing.JTextField();
         Pause_Button = new javax.swing.JButton();
         Cell_Voltage = new javax.swing.JLabel();
         Abort = new javax.swing.JButton();
+        bVol = new javax.swing.JLabel();
+        pKW = new javax.swing.JLabel();
+        kWHours = new javax.swing.JLabel();
+        bAmp = new javax.swing.JLabel();
+        aVPCell = new javax.swing.JLabel();
+        lCell = new javax.swing.JLabel();
+        hCell = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        tCompleted = new javax.swing.JLabel();
+        dUration = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,47 +64,25 @@ public class GUI_Monitor extends javax.swing.JFrame {
         C_V.setRows(5);
         jScrollPane1.setViewportView(C_V);
 
-        Battery_Voltage.setText("Battery Voltage");
+        Battery_Voltage.setText("Battery Voltage:");
 
-        Power_kW.setText("Power (kW)");
+        Power_kW.setText("Power (kW):");
 
-        AV_Cell.setText("Average Volts per Cell");
+        AV_Cell.setText("Average Volts per Cell:");
 
-        High_Cell.setText("High Cell");
+        High_Cell.setText("High Cell:");
 
-        B_Voltage.setText("jTextField1");
+        kW_Hours.setText("kW Hours:");
 
-        P_kW.setText("jTextField2");
+        Low_Cell.setText("Low Cell:");
 
-        kW_H.setText("jTextField3");
+        Battery_Amperage.setText("Battery Amperage:");
 
-        AV_p.setText("jTextField4");
+        Activity_Log.setText("Activity Log:");
 
-        L_C.setText("jTextField5");
+        Duration.setText("Duration:");
 
-        H_C.setText("jTextField6");
-
-        kW_Hours.setText("kW Hours");
-
-        Low_Cell.setText("Low Cell");
-
-        Battery_Amperage.setText("Battery Amperage");
-
-        B_Amp.setText("jTextField7");
-
-        Ac_Log.setColumns(20);
-        Ac_Log.setRows(5);
-        jScrollPane2.setViewportView(Ac_Log);
-
-        Activity_Log.setText("Activity Log");
-
-        Duration.setText("Duration");
-
-        Dur.setText("jTextField8");
-
-        Test_Completed.setText("Test Completed");
-
-        T_Com.setText("jTextField9");
+        Test_Completed.setText("Test Completed:");
 
         Pause_Button.setText("Pause");
         Pause_Button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,7 +91,7 @@ public class GUI_Monitor extends javax.swing.JFrame {
             }
         });
 
-        Cell_Voltage.setText("Cell Voltages");
+        Cell_Voltage.setText("Cell Voltages:");
 
         Abort.setText("Abort");
         Abort.setVisible(false);
@@ -124,6 +100,28 @@ public class GUI_Monitor extends javax.swing.JFrame {
                 AbortActionPerformed(evt);
             }
         });
+
+        bVol.setText("jLabel1");
+
+        pKW.setText("jLabel2");
+
+        kWHours.setText("jLabel3");
+
+        bAmp.setText("jLabel4");
+
+        aVPCell.setText("jLabel5");
+
+        lCell.setText("jLabel6");
+
+        hCell.setText("jLabel7");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
+        tCompleted.setText("jLabel8");
+
+        dUration.setText("jLabel9");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,101 +140,101 @@ public class GUI_Monitor extends javax.swing.JFrame {
                         .addComponent(Cell_Voltage)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(Test_Completed)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tCompleted)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Duration)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dUration)
+                        .addGap(193, 193, 193))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Battery_Voltage)
+                                .addGap(13, 13, 13)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Power_kW)
-                                            .addComponent(kW_Hours)
-                                            .addComponent(Battery_Amperage))
-                                        .addGap(65, 65, 65)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Power_kW)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(pKW))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(kW_Hours)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(kWHours))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Battery_Voltage)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(bVol)))
+                                        .addGap(83, 83, 83)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(AV_Cell)
+                                                    .addComponent(Low_Cell))
+                                                .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(B_Voltage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(kW_H, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(P_kW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(72, 72, 72)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Low_Cell)
-                                                    .addComponent(High_Cell)
-                                                    .addComponent(AV_Cell)))
-                                            .addComponent(B_Amp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(L_C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AV_p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(H_C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Test_Completed)
-                                .addGap(18, 18, 18)
-                                .addComponent(T_Com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                                    .addComponent(aVPCell)
+                                                    .addComponent(lCell)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(67, 67, 67)
+                                                .addComponent(High_Cell)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(hCell))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Battery_Amperage)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(bAmp))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Activity_Log)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Duration)
+                                    .addComponent(Pause_Button)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Dur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Pause_Button)
-                        .addGap(18, 18, 18)
-                        .addComponent(Abort)
-                        .addGap(44, 44, 44))))
+                                    .addComponent(Abort))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(108, 108, 108))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Duration)
-                    .addComponent(Dur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Test_Completed)
-                    .addComponent(T_Com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Battery_Voltage)
-                            .addComponent(B_Voltage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AV_Cell)
-                            .addComponent(AV_p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Activity_Log)
-                        .addGap(5, 5, 5)))
+                    .addComponent(tCompleted)
+                    .addComponent(dUration))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Battery_Voltage)
+                    .addComponent(AV_Cell)
+                    .addComponent(bVol)
+                    .addComponent(aVPCell))
+                .addGap(4, 4, 4)
+                .addComponent(Activity_Log)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Power_kW)
-                                .addComponent(P_kW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Low_Cell, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(L_C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(kW_Hours)
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Battery_Amperage)
-                                    .addComponent(B_Amp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(kW_H, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(H_C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(High_Cell)))))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Low_Cell)
+                            .addComponent(Power_kW)
+                            .addComponent(pKW)
+                            .addComponent(lCell))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(kW_Hours)
+                            .addComponent(kWHours)
+                            .addComponent(High_Cell)
+                            .addComponent(hCell))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Battery_Amperage)
+                            .addComponent(bAmp)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(Cell_Voltage)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -252,7 +250,7 @@ public class GUI_Monitor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void Pause_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pause_ButtonMouseClicked
         // TODO add your handling code here:
         if ((pauseCount % 2) == 0){
@@ -280,8 +278,21 @@ public class GUI_Monitor extends javax.swing.JFrame {
 
     private void AbortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbortActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(null,
-        "Do you really want to Abort the Test?", "Abort", JOptionPane.YES_NO_OPTION);
+        
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = (JOptionPane.showConfirmDialog(null,
+        "Do you really want to Abort the Test?", "Abort", dialogButton));
+        
+        
+        
+        if (dialogResult == JOptionPane.YES_OPTION){
+          
+            GUIEndScreen end = new GUIEndScreen();
+                
+                end.setResizable(false);
+		end.setVisible( true );
+            
+        }
     }//GEN-LAST:event_AbortActionPerformed
 
     /**
@@ -292,32 +303,33 @@ public class GUI_Monitor extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AV_Cell;
-    private javax.swing.JTextField AV_p;
     private javax.swing.JButton Abort;
-    private javax.swing.JTextArea Ac_Log;
     private javax.swing.JLabel Activity_Log;
-    private javax.swing.JTextField B_Amp;
-    private javax.swing.JTextField B_Voltage;
     private javax.swing.JLabel Battery_Amperage;
     private javax.swing.JLabel Battery_Voltage;
     private javax.swing.JTextArea C_V;
     private javax.swing.JLabel Cell_Voltage;
-    private javax.swing.JTextField Dur;
     private javax.swing.JLabel Duration;
-    private javax.swing.JTextField H_C;
     private javax.swing.JLabel High_Cell;
-    private javax.swing.JTextField L_C;
     private javax.swing.JLabel Low_Cell;
-    private javax.swing.JTextField P_kW;
     private javax.swing.JButton Pause_Button;
     private javax.swing.JLabel Power_kW;
-    private javax.swing.JTextField T_Com;
     private javax.swing.JLabel Test_Completed;
+    private javax.swing.JLabel aVPCell;
+    private javax.swing.JLabel bAmp;
+    private javax.swing.JLabel bVol;
+    private javax.swing.JLabel dUration;
+    private javax.swing.JLabel hCell;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField kW_H;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel kWHours;
     private javax.swing.JLabel kW_Hours;
+    private javax.swing.JLabel lCell;
+    private javax.swing.JLabel pKW;
+    private javax.swing.JLabel tCompleted;
     private int pauseCount;
     // End of variables declaration//GEN-END:variables
 }

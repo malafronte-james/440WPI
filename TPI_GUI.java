@@ -1032,10 +1032,8 @@ class TPIGUI
             public void actionPerformed(ActionEvent e){
                 
                 GUI_Monitor monitor = new GUI_Monitor();
-                    //monitor.setPreferredSize( new Dimension(800,480) );
-                //monitor.setMinimumSize(new Dimension(800,480));
-                //monitor.setMaximumSize(new Dimension (800,480));
-                //monitor.pack();
+                
+                monitor.setResizable(false);
 		monitor.setVisible( true );
                 
                 /*JOptionPane.showMessageDialog( tabbedPane,
