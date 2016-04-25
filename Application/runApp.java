@@ -26,15 +26,22 @@ public class runApp implements ActionListener, Observer
 	GUIEndScreen endScreen = new GUIEndScreen();
 	MainLoop loop;
 	TempData data;
+	WriteFile file;
 	long lStartTime, lEndTime;
+	SpiConnector spi = new SpiConnector();
 	
 	public runApp()
 	{
+		data = new TempData();
+		file = new WriteFile(data);
 		main = new TPIGUI();
 		main.setVisible(true);
 		
 		// add actionlistener to main.startbutton object
 		main.conNextButton.addActionListener(this);
+		main.homeNextButton.addActionListener(this);
+		main.conRefreshButton.addActionListener(this);
+		main.checkRefreshButton.addActionListener(this);
 		monitor.Pause_Button.addActionListener(this);
 		endScreen.homeButton.addActionListener(this);
 		
@@ -50,6 +57,21 @@ public class runApp implements ActionListener, Observer
             	   monitor.setVisible(false);
             	   endScreen.setVisible(false);	 
 			   }
+			   
+				if(e.getSource() == main.homeNextButton)
+				{
+					 if (main.generalInfoText.getText().isEmpty()){
+			                JOptionPane.showMessageDialog( main.tabbedPane,
+			                        "Please Enter Test Info");
+			                //setTitle("System Setup");
+			                }
+			                
+			                else{
+			                
+			                main.tabbedPane.setSelectedIndex(1);
+			                main.tabbedPane.setEnabledAt(1, true);
+			                }
+				} // end homeNextButton
 			   
 			   // application start button
 			   if(e.getSource() == main.conNextButton)
@@ -67,12 +89,20 @@ public class runApp implements ActionListener, Observer
 				   main.setVisible(false);
 				   monitor.setVisible(true);
 				   
-				   loop = new MainLoop(monitor, data);
+				   loop = new MainLoop(monitor, data, file);
 				   loop.thresholds.addObserver(this);
 				   loop.startLoop();
 				   lStartTime = System.nanoTime();
 				   
 			   }
+			   
+				if(e.getSource() == main.checkRefreshButton || e.getSource() == main.conRefreshButton)
+				{
+					main.printVoltage(spi.getSpiData(main.numberOfCells));
+		            JOptionPane.showMessageDialog( null,
+		                    "Activity Log is refreshed");
+		            
+				} // end refreshButton
 			   
 			   if (e.getSource() == monitor.Pause_Button)
 			   {

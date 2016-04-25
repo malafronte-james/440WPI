@@ -22,7 +22,7 @@ public class TempData {
 	
 	public TempData()
 	{
-		
+		userData = "";
 	}
 	
 	/**

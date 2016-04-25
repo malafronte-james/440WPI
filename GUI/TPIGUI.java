@@ -28,7 +28,7 @@ public class TPIGUI extends JFrame implements ActionListener
 	                    sysNextButton,
 	                    updateThresholdButton;
 	
-	private	JTabbedPane tabbedPane;
+	public	JTabbedPane tabbedPane;
     private	JPanel homePanel,
                    systemSetupPanel,
                    checkSettingsPanel,
@@ -700,6 +700,7 @@ public class TPIGUI extends JFrame implements ActionListener
                 return numberOfCells;
                 
    } // end numCell 
+   
        
     
     /**
@@ -828,20 +829,6 @@ public class TPIGUI extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{
 		
-		if(e.getSource() == homeNextButton)
-		{
-			 if (generalInfoText.getText().isEmpty()){
-	                JOptionPane.showMessageDialog( tabbedPane,
-	                        "Please Enter Test Info");
-	                //setTitle("Sytem Setup");
-	                }
-	                
-	                else{
-	                
-	                tabbedPane.setSelectedIndex(1);
-	                tabbedPane.setEnabledAt(1, true);
-	                }
-		} // end homeNextButton
 		
 		if(e.getSource() == sysNextButton)
 		{
@@ -1019,11 +1006,6 @@ public class TPIGUI extends JFrame implements ActionListener
 			 
 		} // end updateThresholdButton
 		
-		if(e.getSource() == checkRefreshButton || e.getSource() == conRefreshButton)
-		{
-            JOptionPane.showMessageDialog( tabbedPane,
-                    "Activity Log is refreshed");
-		} // end refreshButton
 		
 //======================Number Of Cells==================================================================================
 		if(e.getSource() == num12RadioButton)

@@ -25,10 +25,11 @@ public class MainLoop{
     int elapsedTime = 0;
     boolean max, min;
 	
-	public MainLoop(GUI_Monitor paramDisplay, TempData paramData)
+	public MainLoop(GUI_Monitor paramDisplay, TempData paramData, WriteFile paramfile)
 	{
 		display = paramDisplay;
 		data = paramData;
+		file = paramfile;
 		
 	}
 	
@@ -55,6 +56,7 @@ public class MainLoop{
 	            float[] cellData = spi.getSpiData(data.getNumberOfCells());
 	            
 	            file.setCellData(cellData);
+	            System.out.println("Printing to file...");
 	            file.printData();
 	            
 

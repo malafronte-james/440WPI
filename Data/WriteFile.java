@@ -44,9 +44,10 @@ private String userData;
 
 
 //Default Constructor that sets the output file as "results.txt"
-public WriteFile(){
-   outputFileName = "results.txt";
-   outputFileName2 = "results1.txt";
+public WriteFile(TempData data){
+   outputFileName = "/media/DISK_IMG/TPI_Output/results.txt";
+   outputFileName2 = "/media/DISK_IMG/TPI_Output/results1.txt";
+   userData = data.getUserData();
    
    //must put in a try catch incase you user does not have permission to write 
    try
@@ -74,7 +75,7 @@ public void setCellData(float[] a){
 }
   
 public void printHeader(){
-  //Print out the userData for the test and a charater return to move to next line
+  //Print out the userData for the test and a character return to move to next line
   out.println(userData + "\n");
   out2.println(userData + "\n");
   
