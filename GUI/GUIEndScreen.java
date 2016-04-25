@@ -230,5 +230,12 @@ public class GUIEndScreen extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * reset gui components for new test
+     */
+    public void resetGUI()
+    {
+    	
+    }
     
 }

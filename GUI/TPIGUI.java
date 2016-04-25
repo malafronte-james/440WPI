@@ -811,6 +811,14 @@ public class TPIGUI extends JFrame implements ActionListener
         
     } // end printVoltage
     
+    /**
+     * reset all gui components for another test
+     */
+    public void resetGUI()
+    {
+    	
+    }
+    
     public void addActionListeners()
     {
     	homeNextButton.addActionListener(this);

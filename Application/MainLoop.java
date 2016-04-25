@@ -49,7 +49,10 @@ public class MainLoop{
 	             
 	          public void run(){
 	        	  
-	     
+	        	// update gui fields
+	        	display.tCompleted.setText("False");
+	        	
+	        	
 	            //spi.getSpiData(data.getNumberOfCells());
 	            //passes gui data to spi.
 

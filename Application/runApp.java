@@ -98,7 +98,14 @@ public class runApp implements ActionListener, Observer
 			   
 				if(e.getSource() == main.checkRefreshButton || e.getSource() == main.conRefreshButton)
 				{
-					main.printVoltage(spi.getSpiData(main.numberOfCells));
+					try{
+						main.printVoltage(spi.getSpiData(main.numberOfCells));
+					}
+					catch (Exception e1)
+					{
+						main.voltArea.setText("No Data Available");
+					}
+					
 		            JOptionPane.showMessageDialog( null,
 		                    "Activity Log is refreshed");
 		            
@@ -106,6 +113,8 @@ public class runApp implements ActionListener, Observer
 			   
 			   if (e.getSource() == monitor.Pause_Button)
 			   {
+            	   monitor.Pause_Button.setText("Resume");
+            	   
 				  // loop.stopLoop();
 	               int confirm = JOptionPane.showConfirmDialog(null, "Abort?", "Paused", JOptionPane.YES_NO_OPTION); 
 	               
@@ -113,6 +122,8 @@ public class runApp implements ActionListener, Observer
 	               {
 	            	   
 	            	   loop.stopLoop();
+	            	   
+	            	   monitor.Pause_Button.setText("Pause");
 	            	   
 	                  //create summary gui    
 	            	   main.setVisible(false);
@@ -123,19 +134,28 @@ public class runApp implements ActionListener, Observer
 
 	            		long difference = lEndTime - lStartTime;
 	            		
-	            		//format the elapsed time
+	            		// format the elapsed time and print to console
 	                    System.out.println("Total execution time: " +
 	                            String.format("%d min, %d sec",
 	                                    TimeUnit.NANOSECONDS.toHours(difference),
 	                                    TimeUnit.NANOSECONDS.toSeconds(difference) -
 	                                            TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference))));
 	            		System.out.println("Elapsed MilliSeconds: " + difference/1000000);
-	            			            		
-
+	            			  
+	            		// update test complete status
+	            		endScreen.tComp.setText("Aborted");
+	            		
+	            		// update total elapsed time
+	            		endScreen.tDuration.setText(
+	                            String.format("%d min, %d sec",
+	                                    TimeUnit.NANOSECONDS.toHours(difference),
+	                                    TimeUnit.NANOSECONDS.toSeconds(difference) -
+	                                            TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(difference))));
 	               }
 	               
 	               else {
 	                  //resume loop
+	            	   monitor.Pause_Button.setText("Pause");
 	            	  loop.startLoop();
            	   
 	            			        

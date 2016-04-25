@@ -127,27 +127,27 @@ public class GUI_Monitor extends JFrame {
             }
         });
 
-        bVol.setText("jLabel1");
+        bVol.setText("bVol");
 
-        pKW.setText("jLabel2");
+        pKW.setText("pKW");
 
-        kWHours.setText("jLabel3");
+        kWHours.setText("kWHours");
 
-        bAmp.setText("jLabel4");
+        bAmp.setText("bAmp");
 
-        aVPCell.setText("jLabel5");
+        aVPCell.setText("aVPCell");
 
-        lCell.setText("jLabel6");
+        lCell.setText("lCell");
 
-        hCell.setText("jLabel7");
+        hCell.setText("hCell");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
 
-        tCompleted.setText("jLabel8");
+        tCompleted.setText("Running");
 
-        duration.setText("jLabel9");
+        duration.setText("duration");
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -320,6 +320,14 @@ public class GUI_Monitor extends JFrame {
             
         }
     }//GEN-LAST:event_AbortActionPerformed
+    
+    /**
+     * reset gui components for new test
+     */
+    public void resetGUI()
+    {
+    	
+    }
 
 
 
