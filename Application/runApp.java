@@ -7,6 +7,8 @@ package Application;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.EventObject;
 import java.util.Observable;
 import java.util.Observer;
@@ -29,6 +31,7 @@ public class runApp implements ActionListener, Observer
 	WriteFile file;
 	long lStartTime, lEndTime;
 	SpiConnector spi = new SpiConnector();
+	Double[][] tempArray;
 	
 	public runApp()
 	{
@@ -84,7 +87,8 @@ public class runApp implements ActionListener, Observer
 				   data.setBatteryVoltage(Float.parseFloat(main.batteryVoltageField.getText()));
 				   data.setCellAlarmThreshold(Float.parseFloat(main.cellAlarmField.getText()));
 				   data.setGeneralTestInformation(main.generalInfoText.getText());
-				   
+				   System.out.println(data.getGeneralTestInformation());
+				   file.setCellData(spi.getSpiData(main.numberOfCells));
 				   
 				   main.setVisible(false);
 				   monitor.setVisible(true);
@@ -99,11 +103,81 @@ public class runApp implements ActionListener, Observer
 				if(e.getSource() == main.checkRefreshButton || e.getSource() == main.conRefreshButton)
 				{
 					try{
-						main.printVoltage(spi.getSpiData(main.numberOfCells));
+						//System.out.println("Number of Cells: " + main.numberOfCells);
+						
+						float[] spiArray = spi.getSpiData(main.numberOfCells);
+						//main.printVoltage(spi.getSpiData(main.numberOfCells));
+						
+						tempArray = new Double [main.numberOfCells] [2];
+		                
+		                int tempCell = 1;
+		                
+		                for (int i= 0; i < spiArray.length; i++){
+		                     
+		                    int j = 0;
+		                    tempArray [i][j] = Double.valueOf(spiArray[i]);
+		                    j++;
+		                    tempArray [i][j] = Double.valueOf(tempCell);
+		                    tempCell++;
+		                }
+						
+						if (main.sortLowRadioButton.isSelected()){
+			                
+			                   final Comparator<Double[]> arrayComparator = new Comparator<Double[]>() {
+			                    @Override
+			                    public int compare(Double[] o1, Double[] o2) {
+			                    return ((o1[0]).compareTo(o2[0]));
+			                    }
+			                };
+			                Arrays.sort(tempArray, arrayComparator);
+			                main.voltArea.setText("");
+			                
+			                for (int i= 0; i < tempArray.length; i++){
+			                    
+			                
+			                main.voltArea.append("Cell : " + Math.round(tempArray [i][1]) + "    " + tempArray [i][0] + "   ");
+			                //System.out.println("Cell : " + tempArray [i][1] + "    " + tempArray [i][0] + "   ");
+			                
+			                
+			                 }
+			                }
+			                
+			                else if (main.sortHighRadioButton.isSelected()){
+			                
+			                   final Comparator<Double[]> arrayComparatorDes = new Comparator<Double[]>() {
+			                    @Override
+			                    public int compare(Double[] o1, Double[] o2) {
+			                    return ((o2[0]).compareTo(o1[0]));
+			                    }
+			                };
+			                Arrays.sort(tempArray, arrayComparatorDes);
+			                main.voltArea.setText("");
+			                
+			                for (int i= 0; i < tempArray.length; i++){
+			                    
+			                
+			                main.voltArea.append("Cell " + Math.round(tempArray [i][1]) + ":    " + tempArray [i][0] + "   ");
+			                //System.out.println("Cell " + tempArray [i][1] + ":    " + tempArray [i][0] + "   ");
+			                
+			                
+			                 }
+			                
+			                }
+			                
+			                
+			                else if (main.sortCellRadioButton.isSelected()){
+			               
+			                  main.voltArea.setText("");
+			                  main.printVoltage(spiArray);
+			                
+			                }
+						
+						
 					}
 					catch (Exception e1)
 					{
 						main.voltArea.setText("No Data Available");
+						e1.printStackTrace();
 					}
 					
 		            JOptionPane.showMessageDialog( null,
@@ -171,7 +245,7 @@ public class runApp implements ActionListener, Observer
 			System.out.println("out of threshold at " + obj);
 			
 			// pause the loop
-			loop.pauseLoop();
+			//loop.pauseLoop();
 			
 			// alarm
 			

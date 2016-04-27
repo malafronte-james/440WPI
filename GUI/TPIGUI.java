@@ -15,7 +15,7 @@ import javax.swing.event.ChangeListener;
 public class TPIGUI extends JFrame implements ActionListener
 {
 
-	public int numberOfCells = 24;
+	public int numberOfCells;
 	
 	public CustomButton checkRefreshButton,
 	                    checkBackButton,
@@ -68,7 +68,7 @@ public class TPIGUI extends JFrame implements ActionListener
                    versionLabel,
                    dateLabel;
     
-    private JRadioButton num12RadioButton,
+    public JRadioButton num12RadioButton,
                          num24RadioButton,
                          num60RadioButton,
                          num240RadioButton,
@@ -76,7 +76,10 @@ public class TPIGUI extends JFrame implements ActionListener
                          refYesRadioButton,
                          refNoRadioButton,
                          overallYesRadioButton,
-                         overallNoRadioButton;
+                         overallNoRadioButton,
+                         sortCellRadioButton,
+                         sortLowRadioButton,
+                         sortHighRadioButton;
     
     private int cells;
     
@@ -429,12 +432,14 @@ public class TPIGUI extends JFrame implements ActionListener
                 hiThreshField.setBounds(460, 100, 50, 30);
                 
                 JLabel logLabel = new JLabel("Activity Log");
+                JScrollPane pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
                 TextArea activityLog = new TextArea("", 4, 30, TextArea.SCROLLBARS_VERTICAL_ONLY);
                 activityLog.setBackground(Color.WHITE);
                 activityLog.setEditable(false);
+                pane.add(activityLog);
                 
                 checkSettingsPanel.add(logLabel);
-                checkSettingsPanel.add(activityLog);
+                checkSettingsPanel.add(pane);
                 
                 logLabel.setBounds(600, 50, 100, 30);
                 activityLog.setBounds(600, 90, 150, 150);
@@ -450,31 +455,31 @@ public class TPIGUI extends JFrame implements ActionListener
                 sortLabel.setBounds(140, 230, 150, 30);
                 
                 JLabel sortRadioLabel= new JLabel ("Sort by");
-                JRadioButton sortCell = new JRadioButton("Cell #");
-                JRadioButton sortLow = new JRadioButton("Low");
-                JRadioButton sortHigh = new JRadioButton("High");
+                sortCellRadioButton = new JRadioButton("Cell #");
+                sortLowRadioButton = new JRadioButton("Low");
+                sortHighRadioButton = new JRadioButton("High");
 
                 
                 ButtonGroup sortGroup = new ButtonGroup();
-                sortGroup.add(sortCell);
-                sortGroup.add(sortLow);
-                sortGroup.add(sortHigh);
+                sortGroup.add(sortCellRadioButton);
+                sortGroup.add(sortLowRadioButton);
+                sortGroup.add(sortHighRadioButton);
                 
-                sortCell.setSelected(true);
+                sortCellRadioButton.setSelected(true);
                 
                 checkSettingsPanel.add(sortRadioLabel);
-                checkSettingsPanel.add(sortCell);
-                checkSettingsPanel.add(sortLow);
-                checkSettingsPanel.add(sortHigh);
+                checkSettingsPanel.add(sortCellRadioButton);
+                checkSettingsPanel.add(sortLowRadioButton);
+                checkSettingsPanel.add(sortHighRadioButton);
                 
-                sortCell.setOpaque(false);
-                sortLow.setOpaque(false);
-                sortHigh.setOpaque(false);
+                sortCellRadioButton.setOpaque(false);
+                sortLowRadioButton.setOpaque(false);
+                sortHighRadioButton.setOpaque(false);
                 
                 sortRadioLabel.setBounds( 300, 230, 50, 30 );
-                sortCell.setBounds( 360, 230, 60, 30 );
-                sortLow.setBounds( 430, 230, 50, 30 );
-                sortHigh.setBounds( 500, 230, 50, 30 );
+                sortCellRadioButton.setBounds( 360, 230, 60, 30 );
+                sortLowRadioButton.setBounds( 430, 230, 50, 30 );
+                sortHighRadioButton.setBounds( 500, 230, 50, 30 );
                 
                 voltArea = new TextArea("", 4, 30, TextArea.SCROLLBARS_VERTICAL_ONLY);
                 voltArea.setBackground(Color.WHITE);
@@ -676,28 +681,34 @@ public class TPIGUI extends JFrame implements ActionListener
    public String numCell()
    {
         
-                String numberOfCells = "";
+                String strNumberOfCells = "";
             
                 if (num12RadioButton.isSelected()){
-                numberOfCells="12";
+                	strNumberOfCells="12";
+                	numberOfCells=12;
+                
                 }
             
                 else if (num24RadioButton.isSelected() ){
-                    numberOfCells="24";
+                	strNumberOfCells="24";
+                	numberOfCells=24;
                 }
 
                 else if (num60RadioButton.isSelected() ){
-                    numberOfCells="60";
+                	strNumberOfCells="60";
+                	numberOfCells=60;
                 }
 
                 else if (num240RadioButton.isSelected() ){
-                    numberOfCells="240";
+                	strNumberOfCells="240";
+                	numberOfCells=240;
                 }
 
                 else{
-                    numberOfCells=cellField.getText();
+                	strNumberOfCells=cellField.getText();
+                	numberOfCells=Integer.parseInt(strNumberOfCells);
                 }
-                return numberOfCells;
+                return strNumberOfCells;
                 
    } // end numCell 
    
@@ -802,9 +813,9 @@ public class TPIGUI extends JFrame implements ActionListener
             
             int cell = 1;
         
-            for (int i= 0; 1 < spiOutputArray.length; i++){
+            for (int i= 0; i < numberOfCells; i++){
                 
-               voltArea.append("Cell : " + cell + spiOutputArray[i] + "  ");
+               voltArea.append("Cell " + cell+ ": " + spiOutputArray[i] + "  ");
                cell++;
                 
             }
@@ -1033,7 +1044,7 @@ public class TPIGUI extends JFrame implements ActionListener
 		
 		if(e.getSource() == num240RadioButton)
 		{
-			numberOfCells = 12;
+			numberOfCells = 240;
 		}
 		
 		if(e.getSource() == otherNumRadioButton)

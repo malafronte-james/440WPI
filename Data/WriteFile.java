@@ -67,11 +67,20 @@ public WriteFile(TempData data){
 
 //Setters
 public void setUserData(String d){
-   userData = d;
+	try{
+		userData = d;
+	} catch(Exception e){
+		System.out.println(e.getClass().getName() + " has an error.");
+	}
 }
 
 public void setCellData(float[] a){
-   results = a;
+	try{
+		   results = a;
+	} catch(Exception e){
+		System.out.println(e.getClass().getName() + " has an error.");
+	}
+
 }
   
 public void printHeader(){

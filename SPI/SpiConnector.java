@@ -150,13 +150,18 @@ public class SpiConnector {
 	      }
 	      digitalWrite(ADEN, LOW);
 
-	      for(cell=0; cell < numCells - 1; cell++){
+	      try{
+	      for(cell=0; cell < numCells; cell++){
+	    	  
                  cell_values[cell] = cell_rdgs[cell] * (AD_REF / 4096);
                  spiOutputs = cell_values[cell];
                  System.out.printf("Cell %d: %1.2f\n", cell+1, spiOutputs);
                 // AmpeaterDisplay.appendDisplay(String.format("Cell %d: %1.2f\n", cell+1, spiOutputs));
                 
               }
+	      }catch(Exception e) {
+	    	  System.out.println("Error happened in SPI Connector");
+	      }
                 System.out.println("\nVoltage Reading Complete.");
                 System.out.printf("\033[12A");
                      j++;
